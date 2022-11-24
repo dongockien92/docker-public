@@ -1,0 +1,20 @@
+{
+    "identities": [
+        {
+            "name": "ttcntt",
+            "credentials": [
+                {
+                "accessKey": "ttcnttKey",
+                "secretKey": "ttcnttSecret"
+                }
+            ],
+            "actions": [
+                "Read",
+                "Write",
+                "List",
+                "Tagging",
+                "Admin"
+            ]
+        }
+    ]
+}
