@@ -8,6 +8,11 @@ docker compose -f seaweedfs-dev-compose.yml up --build -d
 docker compose -f seaweedfs-dev-compose.yml start
 ```
 
+## Down all containers
+```
+docker compose -f seaweedfs-dev-compose.yml down
+```
+
 ## Refer:
 https://github.com/seaweedfs/seaweedfs
 

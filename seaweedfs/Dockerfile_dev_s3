@@ -1,3 +1,0 @@
-FROM chrislusf/seaweedfs:3.35_large_disk_full
-WORKDIR /home
-COPY s3_dev_config.json /home/s3_config.json

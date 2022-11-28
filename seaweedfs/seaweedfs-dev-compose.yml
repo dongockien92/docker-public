@@ -25,7 +25,7 @@ services:
       - master
   filer:
     image: chrislusf/seaweedfs:3.35_large_disk_full # use a remote dev image
-    container_name: filter
+    container_name: filer
     ports:
       - 8901:8888
       - 18888:18888
@@ -37,16 +37,16 @@ services:
       - master
       - volume
   s3:
-    build:
-      context: .
-      dockerfile: ./Dockerfile_dev_s3
+    image: chrislusf/seaweedfs:3.35_large_disk_full # use a remote dev image
     container_name: s3
     ports:
       - 8333:8333
       - 9327:9327
     networks:
       - ttcntt
-    command: 's3 -filer="filer:8888" -ip.bind=0.0.0.0 -metricsPort=9327 s3.config=/home/s3_config.json'
+    command: 's3 -filer="filer:8888" -ip.bind=0.0.0.0 -metricsPort=9327 -config=/home/seaweedfs/s3_config.json'
+    volumes:
+      - "./:/home/seaweedfs"
     depends_on:
       - master
       - volume
